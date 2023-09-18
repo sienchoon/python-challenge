@@ -3,8 +3,8 @@ import os
 import csv
 
 #set path to the file
-csvpath = os.path.join( "Resources", "budget_data.csv")
-print(csvpath)
+csvpath = os.path.join( "resources", "budget_data.csv")
+print("The data sheet is located at: " + csvpath)
 
 #create a loop to go through each row of data
 #initialise variables to start the count
@@ -88,10 +88,13 @@ lines_to_export = [
     f"Greatest Decrease in Profits: {worst_date} : ${str(greatest_decrease)}\n",
 ]
 
+file_output_name = "summary.txt"
+output_folder = "analysis"
+file_path = os.path.join(output_folder, file_output_name)
 #printing/exporting the results as a text file:
-with open("output.txt", "w") as text:
+with open(file_path, "w") as text:
 #loop through lines to export
     for line in lines_to_export:
         text.write(line)
 
-print("The summary has been exported to output.txt")
+print(f"The summary has been saved as {file_output_name} and exported to {file_path}.")
