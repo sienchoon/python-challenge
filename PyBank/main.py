@@ -1,7 +1,6 @@
 #importing data from csv files using library module
 import os
 import csv
-from datetime import datetime
 
 #set path to the file
 csvpath = os.path.join( "Resources", "budget_data.csv")
@@ -79,8 +78,7 @@ print(f"Greatest Decrease in Profits: {worst_date} : ${str(greatest_decrease)}\n
 
 
 #formatting the lines in a list
-lines_to_export = [
-    
+lines_to_export = [   
     "Financial Analysis\n",
     "---------------------------------------------------------------\n",
     f"Total Months: {str(total_months)}\n",
@@ -88,7 +86,6 @@ lines_to_export = [
     f"Average Change: ${str(formatted_average_change)}\n",
     f"Greatest Increase in Profits: {best_date} : ${str(greatest_increase)}\n",
     f"Greatest Decrease in Profits: {worst_date} : ${str(greatest_decrease)}\n",
-    
 ]
 
 #printing/exporting the results as a text file:
@@ -96,4 +93,5 @@ with open("output.txt", "w") as text:
 #loop through lines to export
     for line in lines_to_export:
         text.write(line)
-    
+
+print("The summary has been exported to output.txt")
